@@ -45,6 +45,11 @@
       </div>
     </section>
 
+    <!-- 参考资料库 -->
+    <section class="section">
+      <ReferencesPanel />
+    </section>
+
     <!-- 底部说明 -->
     <footer class="app-footer">
       <p>五行分类参考：中信里昂风水指南 · 《协纪辨方书》· 申万2021版行业分类</p>
@@ -59,6 +64,7 @@ import PillarDisplay from './components/PillarDisplay.vue'
 import EnergySummary from './components/EnergySummary.vue'
 import IndustryTable from './components/IndustryTable.vue'
 import DateNavigator from './components/DateNavigator.vue'
+import ReferencesPanel from './components/ReferencesPanel.vue'
 import { computePillars } from './engine/pillars.js'
 import { getIndustryStockData } from './api/stock.js'
 

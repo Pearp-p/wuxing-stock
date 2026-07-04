@@ -14,7 +14,11 @@ export async function fetchIndustryQuotes() {
   try {
     // 东方财富行业板块API
     // m:90+t2 = 行业板块, m:90+t3 = 概念板块
-    const url = '/api/eastmoney/api/qt/clist/get?' + new URLSearchParams({
+    // 生产环境直连东方财富API（已允许跨域），开发环境走Vite代理
+    const baseUrl = import.meta.env.PROD
+      ? 'https://push2.eastmoney.com/api/qt/clist/get'
+      : '/api/eastmoney/api/qt/clist/get'
+    const url = baseUrl + '?' + new URLSearchParams({
       pn: '1',       // 页码
       pz: '100',     // 每页条数
       po: '1',       // 排序方向
